@@ -1,0 +1,42 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.innotek.demotestproject.view.piechart.PieChartView2
+        android:id="@+id/pie_chart"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_centerHorizontal="true"
+        app:circleRadius="100dp"
+        app:textSize="13sp"
+        android:visibility="gone"
+        />
+    <com.innotek.demotestproject.view.piechart.PieChartView3
+        android:id="@+id/pie_chart3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        app:circleRadius="100dp"
+        app:textSize="13sp"
+        />
+    <!-- <com.dahanis.piechart.LineViewAnimation
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:layout_centerHorizontal="true"/>-->
+    <!-- <com.dahanis.piechart.LineViewAnimation2
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:layout_centerHorizontal="true"/>-->
+    <!-- <com.dahanis.piechart.LineViewAnimation3
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_centerHorizontal="true"/>-->
+   <com.innotek.demotestproject.view.piechart.LineViewAnimation4
+       android:layout_width="200dp"
+       android:layout_height="200dp"
+       android:layout_centerHorizontal="true"
+       android:layout_alignParentBottom="true"
+       />
+
+</RelativeLayout>

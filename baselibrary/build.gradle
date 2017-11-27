@@ -1,0 +1,64 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+
+    defaultConfig {
+        minSdkVersion 11
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+<<<<<<< HEAD
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+=======
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+   androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+>>>>>>> d8e35479b696d4f8e39ceee82c308d77c78054bf
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    testCompile 'junit:junit:4.12'
+<<<<<<< HEAD
+    provided files('libs/okhttp-3.4.1.jar')
+    provided files('libs/okio-1.10.0.jar')
+    provided files('libs/gson-2.2.4.jar')
+    //eventBus
+=======
+    compile files('libs/okhttp-3.4.1.jar')
+    compile files('libs/okio-1.10.0.jar')
+    compile files('libs/gson-2.2.4.jar')
+//eventBus
+>>>>>>> d8e35479b696d4f8e39ceee82c308d77c78054bf
+    compile 'org.greenrobot:eventbus:3.0.0'
+    //glide
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    //picasso
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    //loading
+    compile 'com.ldoublem.loadingview:loadingviewlib:1.0'
+
+    // compile 'com.google.code.gson:gson:2.3'
+//        compile ('com.squareup.retrofit:retrofit:2.0.0-beta1') {
+//          exclude group: 'com.squareup.okhttp3'
+//       }
+//       compile ('com.squareup.retrofit:converter-gson:2.0.0-beta2') {
+//           exclude group: 'com.google.code.gson'
+//            exclude group: 'com.squareup.okhttp3'
+//         }
+//         compile 'com.squareup.okhttp:okhttp:2.4.0'
+}

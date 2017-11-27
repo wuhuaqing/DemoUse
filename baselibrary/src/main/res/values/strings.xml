@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">BaseLibrary</string>
+
+    <!-- toast textView Id -->
+    <item name="id_toast_msg" type="id"/>
+    <!-- toast iamgeView id -->
+    <item name="id_toast_img" type="id"/>
+</resources>

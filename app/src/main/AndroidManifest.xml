@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.innotek.demotestproject">
+
+    <uses-sdk tools:overrideLibrary="com.daimajia.androidanimations.library" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".DemoProApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".activity.MainActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.PickViewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SnowActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".activity.BaseActivity" />
+        <activity android:name=".recyclerview.RecyclerActivity" />
+        <activity android:name=".activity.GaintViewActivity" />
+        <activity android:name=".activity.PayBoardActivity" />
+        <activity android:name=".kotlinpackage.KotlinMainActivity" />
+        <activity
+            android:name=".activity.FloatMenuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ImageLoadeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SearchEditTextActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SearchEditTextActivity2"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ZhihuDataActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".activity.GreenDaoTestActivity" />
+        <activity android:name=".activity.ValueAnimotorActivity" />
+        <activity android:name=".activity.ViewDragHelperActivity" />
+        <activity android:name=".activity_view.activity.ShowViewActivity" />
+        <activity android:name=".activity.NumberKeyBoardActivity" />
+        <activity android:name=".activity_view.activity.TextPaintActivity" />
+        <activity android:name=".activity_view.activity.ViewMainActivity" />
+        <activity android:name=".activity_sdw.SPWDemoActivity" />
+        <activity android:name=".activity_sdw.CoordinatorLayoutDemo1Actvity" />
+        <activity android:name=".activity_sdw.CoordinatorLayoutDemo2Actvity" />
+        <activity android:name=".activity_rxjava_retrofit.RetrofitDemoActivity"></activity>
+    </application>
+
+</manifest>

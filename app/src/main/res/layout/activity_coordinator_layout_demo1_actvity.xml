@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_spwdemo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.innotek.demotestproject.activity_sdw.SPWDemoActivity">
+
+    <Button
+        android:id="@+id/btn_child"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/blue_4"
+        android:text="嘿嘿"
+        android:textColor="@color/white"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="200dp"
+        app:layout_behavior="com.innotek.demotestproject.activity_sdw.behavior.ButtonBehavior"/>
+
+    <com.innotek.demotestproject.view.TempView
+        android:id="@+id/btn_dep"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="#3366CC"
+        />
+
+
+
+</android.support.design.widget.CoordinatorLayout>
