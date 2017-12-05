@@ -59,7 +59,8 @@
         <activity android:name=".activity_sdw.SPWDemoActivity" />
         <activity android:name=".activity_sdw.CoordinatorLayoutDemo1Actvity" />
         <activity android:name=".activity_sdw.CoordinatorLayoutDemo2Actvity" />
-        <activity android:name=".activity_rxjava_retrofit.RetrofitDemoActivity"></activity>
+        <activity android:name=".activity_rxjava_retrofit.RetrofitDemoActivity" />
+        <activity android:name=".activity.CarAnimatorActivity" />
     </application>
 
 </manifest>

@@ -132,6 +132,12 @@ public class MainActivity extends BaseActivity {
                 startActivity(new Intent(MainActivity.this, SPWDemoActivity.class));
             }
         });
+        findViewById(R.id.carviewanimator).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, CarAnimatorActivity.class));
+            }
+        });
     }
 
 }

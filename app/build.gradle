@@ -46,6 +46,7 @@ buildscript {
     }
 }
 dependencies {
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:25.0.1'
     //butterknife
@@ -55,13 +56,13 @@ dependencies {
     debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5'
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
     compile 'com.android.support:recyclerview-v7:25.1.0'
-     //kotlin
+    //kotlin
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     //compile project(':pullToReflushLibrary-1.0')
-      compile project(':baselibrary')
-     compile project(':NumberKeyBoardView')
-   //greendao
+    compile project(':baselibrary')
+    compile project(':NumberKeyBoardView')
+    //greendao
     compile 'org.greenrobot:greendao:3.0.1'// add library
     compile 'com.android.support:design:23.1.1'
- 
+
 }
