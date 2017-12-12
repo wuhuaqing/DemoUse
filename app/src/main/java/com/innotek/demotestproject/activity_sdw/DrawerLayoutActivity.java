@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.innotek.demotestproject.R;
 import com.innotek.demotestproject.activity.BaseActivity;
+import com.innotek.demotestproject.activity_sdw.listener.MenuItemClickedListener;
 
 import util.ToastUtil;
 
@@ -20,12 +21,14 @@ import util.ToastUtil;
  * Created by admin on 2017/12/12.
  */
 
-public class DrawerLayoutActivity extends BaseActivity implements View.OnClickListener {
+public class DrawerLayoutActivity extends BaseActivity implements View.OnClickListener  {
 
     private NavigationView navigationView;
     private DrawerLayout drawerLayout;
     private ImageView menu;
     private View headerView;
+    private MenuItem menuItem;
+    private TextView tv_content;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +41,7 @@ public class DrawerLayoutActivity extends BaseActivity implements View.OnClickLi
         drawerLayout = (DrawerLayout) findViewById(R.id.activity_na);
         navigationView = (NavigationView) findViewById(R.id.nav);
         menu = (ImageView) findViewById(R.id.main_menu);
+        tv_content = (TextView) findViewById(R.id.tv_content);
         //获取头布局
         headerView = navigationView.getHeaderView(0);
         ImageView iv_person = (ImageView) headerView.findViewById(R.id.person);
@@ -48,11 +52,14 @@ public class DrawerLayoutActivity extends BaseActivity implements View.OnClickLi
         tv_name.setOnClickListener(this);
         menu.setOnClickListener(this);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 // item.setChecked(true);
                 // Toast.makeText(MainActivity.this,item.getTitle().toString(),Toast.LENGTH_SHORT).show();
                 ToastUtil.show(item.getTitle().toString());
+                menuItem = item;
+                tv_content.setText(item.getTitle().toString());
                 // drawerLayout.closeDrawer(navigationView);
                 return true;
             }
@@ -82,4 +89,6 @@ public class DrawerLayoutActivity extends BaseActivity implements View.OnClickLi
             default:
         }
     }
+
+
 }
