@@ -23,14 +23,8 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        initToolBar();
+        initToolBar(toolbar,getString(R.string.title_main));
         clickMethod();
-    }
-    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    public void initToolBar(){
-        toolbar.setTitle("Main");
-        toolbar.setTitleTextColor(Color.WHITE);
-        toolbar.setBackgroundColor(getResources().getColor(R.color.color_44C679));
     }
 
     public void clickMethod(){
@@ -136,6 +130,18 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, CarAnimatorActivity.class));
+            }
+        });
+        findViewById(R.id.cameraopen).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, ShanGActivity.class));
+            }
+        });
+        findViewById(R.id.nongshang).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, NongShangBankActivity.class));
             }
         });
     }

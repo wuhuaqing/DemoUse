@@ -75,7 +75,7 @@ public class CarLoadingView extends RelativeLayout {
             ObjectAnimator animatorRoad = ObjectAnimator.ofFloat(iv_road, View.TRANSLATION_X, 0f,-50f);
             animatorRoad.setRepeatCount(ValueAnimator.INFINITE);
             animatorRoad.setRepeatMode(ValueAnimator.RESTART);
-            animatorRoad.setDuration(3000);
+            animatorRoad.setDuration(300);
 
             AnimatorSet animatorSet = new AnimatorSet();
              animatorSet.playTogether(animator,animatorScaleX,animatorScaleY,animatorRoad);

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    >
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/favorite"
+            android:checkable="true"
+            android:icon="@mipmap/ic_menumem"
+            android:title="    会员"
+            app:showAsAction="always" />
+
+    </group>
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/wallet"
+            android:icon="@mipmap/ic_menuwa"
+            android:title="    钱包"
+            app:showAsAction="always" />
+    </group>
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/photo"
+            android:icon="@mipmap/ic_menuvolly"
+            android:title="    相册"
+            app:showAsAction="always" />
+    </group>
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/dress"
+            android:icon="@mipmap/ic_menuzb"
+            android:title="    装扮"
+            app:showAsAction="always" />
+    </group>
+
+</menu>

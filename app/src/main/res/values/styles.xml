@@ -15,8 +15,8 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="colorPrimary">@color/color_44C679</item>
-       <!-- <item name="colorPrimaryDark">@android:color/transparent</item>-->
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowTranslucentStatus">true</item>
     </style>
     <declare-styleable name="ChooseEditText">
         <attr name="cet_ChooseBgColor" format="reference|color"/>
@@ -24,4 +24,13 @@
         <attr name="cet_TextSize" format="reference|dimension"/>
         <attr name="cet_Hint" format="reference|string"/>
     </declare-styleable>
+
+    <!-- 高版本 -->
+    <style name="ItemHeight">
+        <item name="android:listPreferredItemHeightSmall">50dp</item>
+    </style>
+
+
+
+
 </resources>
