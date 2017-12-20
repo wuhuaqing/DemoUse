@@ -1,30 +1,25 @@
 package com.innotek.demotestproject.activity;
-
-import android.annotation.TargetApi;
 import android.content.Intent;
-import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
-
 import com.innotek.demotestproject.R;
 import com.innotek.demotestproject.activity_sdw.SPWDemoActivity;
 import com.innotek.demotestproject.activity_view.activity.ShowViewActivity;
 import com.innotek.demotestproject.activity_view.activity.ViewMainActivity;
-import com.innotek.demotestproject.kotlinpackage.KotlinMainActivity;
 
 public class MainActivity extends BaseActivity {
 
-    private Toolbar toolbar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        initToolBar(toolbar,getString(R.string.title_main));
+        setToolBar();
         clickMethod();
+    }
+    public void setToolBar(){
+        toolbar.setTitle("Main");
     }
 
     public void clickMethod(){
@@ -53,13 +48,13 @@ public class MainActivity extends BaseActivity {
             }
         });
 
-        findViewById(R.id.btn_kotlin).setOnClickListener(new View.OnClickListener() {
+        /*findViewById(R.id.btn_kotlin).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, KotlinMainActivity.class));
             }
         });
-
+*/
         findViewById(R.id.btn_floatmenu).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

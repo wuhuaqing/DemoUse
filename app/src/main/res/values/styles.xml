@@ -16,7 +16,6 @@
         <item name="windowNoTitle">true</item>
         <item name="colorPrimary">@color/color_44C679</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:windowTranslucentStatus">true</item>
     </style>
     <declare-styleable name="ChooseEditText">
         <attr name="cet_ChooseBgColor" format="reference|color"/>

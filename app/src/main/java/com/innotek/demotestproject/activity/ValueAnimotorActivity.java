@@ -12,7 +12,7 @@ import com.innotek.demotestproject.view.piechart.PieChartView3;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ValueAnimotorActivity extends Activity {
+public class ValueAnimotorActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

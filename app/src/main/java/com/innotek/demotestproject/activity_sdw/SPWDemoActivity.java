@@ -20,6 +20,8 @@ public class SPWDemoActivity extends BaseActivity  {
     public Button btn_coordidemo2;
     @BindView(R.id.btn_drawerlayout)
     public Button btn_drawerlayout;
+    @BindView(R.id.btn_serachview)
+    public Button btn_serachview;
     @BindView(R.id.toolbar)
     public Toolbar toolbar;
 
@@ -28,7 +30,7 @@ public class SPWDemoActivity extends BaseActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spwdemo);
         bind = ButterKnife.bind(this);
-        initToolBar(toolbar,getString(R.string.title_spwdemo));
+        toolbar.setTitle(getString(R.string.title_spwdemo));
         btn_coordidemo1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,6 +47,12 @@ public class SPWDemoActivity extends BaseActivity  {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(SPWDemoActivity.this,DrawerLayoutActivity.class));
+            }
+        });
+        btn_serachview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SPWDemoActivity.this,SearchViewActivity.class));
             }
         });
     }

@@ -5,13 +5,14 @@ import android.os.Bundle;
 import android.widget.Button;
 
 import com.innotek.demotestproject.R;
+import com.innotek.demotestproject.activity.BaseActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
 
-public class RetrofitDemoActivity extends Activity {
+public class RetrofitDemoActivity extends BaseActivity {
 
     private Unbinder butterKnife;
 

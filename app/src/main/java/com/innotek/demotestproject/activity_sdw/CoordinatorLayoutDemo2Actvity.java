@@ -12,8 +12,8 @@ import butterknife.Unbinder;
 
 public class CoordinatorLayoutDemo2Actvity extends BaseActivity {
     private Unbinder bind;
-    @BindView(R.id.toolbar)
-    Toolbar toolbar;
+    @BindView(R.id.sdwtoolbar)
+    Toolbar sdwtoolbar;
 //    @BindView(R.id.collaptoolbarlayout)
 //    CollapsingToolbarLayout collaptoolbarlayout;
     @Override
@@ -22,24 +22,22 @@ public class CoordinatorLayoutDemo2Actvity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_coordinator_layout_demo2_actvity);
         bind = ButterKnife.bind(this);
-        initToolBar();
+        setToolBar();
     }
 
-    public void initToolBar(){
-          toolbar.setTitle("标题");
+    public void setToolBar(){
+        toolbar.setVisibility(View.GONE);
+        sdwtoolbar.setTitle("标题");
        //  collaptoolbarlayout.setTitle("标题");
 //        toolbar.setCollapsible(true);
-        setSupportActionBar(toolbar);
         //图标点击事件在support方法后
-        toolbar.setNavigationIcon(R.mipmap.ic_sdw_return);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+        sdwtoolbar.setNavigationIcon(R.mipmap.ic_sdw_return);
+        sdwtoolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                finish();
             }
         });
-
-
 
     }
     @Override

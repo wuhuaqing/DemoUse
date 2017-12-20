@@ -19,7 +19,7 @@ import java.lang.reflect.Method;
 
 
 
-public class NumberKeyBoardActivity extends AppCompatActivity {
+public class NumberKeyBoardActivity extends BaseActivity {
 
     private EditText et;
 

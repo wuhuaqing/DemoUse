@@ -10,7 +10,7 @@ import com.innotek.demotestproject.R;
 import com.innotek.demotestproject.view.seacheditview.ChooseEditText;
 import com.innotek.demotestproject.view.seacheditview.OnChooseEditTextListener;
 
-public class SearchEditTextActivity extends Activity implements View.OnClickListener{
+public class SearchEditTextActivity extends BaseActivity  implements View.OnClickListener{
 
     ChooseEditText chooseEditText;
     TextView tvResult;

@@ -4,8 +4,9 @@ import android.app.Activity;
 import android.os.Bundle;
 
 import com.innotek.demotestproject.R;
+import com.innotek.demotestproject.activity.BaseActivity;
 
-public class ShowViewActivity extends Activity {
+public class ShowViewActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

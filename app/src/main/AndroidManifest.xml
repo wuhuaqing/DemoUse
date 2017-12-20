@@ -6,8 +6,9 @@
     <uses-sdk tools:overrideLibrary="com.daimajia.androidanimations.library" />
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.FLASHLIGHT" />
+
     <uses-feature android:name="android.hardware.camera" />
 
     <application
@@ -64,12 +65,20 @@
         <activity android:name=".activity_sdw.CoordinatorLayoutDemo2Actvity" />
         <activity android:name=".activity_rxjava_retrofit.RetrofitDemoActivity" />
         <activity android:name=".activity.CarAnimatorActivity" />
-        <activity android:name=".activity.ShanGActivity"
-            android:screenOrientation="portrait"></activity>
-        <activity android:name=".activity.NongShangBankActivity"
-            android:screenOrientation="portrait"></activity>
-        <activity android:name=".activity_sdw.DrawerLayoutActivity"
-            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activity.ShanGActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.NongShangBankActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity_sdw.DrawerLayoutActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity_sdw.SearchViewActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".activity_sdw.SearchViewBarActivity" />
+        <activity android:name=".activity_view.activity.StepHorezonActivity"></activity>
     </application>
 
 </manifest>

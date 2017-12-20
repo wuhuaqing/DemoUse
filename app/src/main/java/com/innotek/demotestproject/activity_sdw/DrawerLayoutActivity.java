@@ -35,6 +35,7 @@ public class DrawerLayoutActivity extends BaseActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drawerlayout);
         initView();
+        toolbar.setVisibility(View.GONE);
     }
 
     public void initView() {

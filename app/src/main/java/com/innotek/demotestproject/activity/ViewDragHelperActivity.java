@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import com.innotek.demotestproject.R;
 
-public class ViewDragHelperActivity extends Activity {
+public class ViewDragHelperActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

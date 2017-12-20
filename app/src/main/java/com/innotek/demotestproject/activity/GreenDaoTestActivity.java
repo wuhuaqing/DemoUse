@@ -17,7 +17,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import util.ToastUtil;
 
-public class GreenDaoTestActivity extends Activity {
+public class GreenDaoTestActivity extends BaseActivity  {
 
     @BindView(R.id.btn_adddata)
     Button btn_adddata;

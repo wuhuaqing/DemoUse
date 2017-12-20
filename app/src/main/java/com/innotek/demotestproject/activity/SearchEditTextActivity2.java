@@ -11,7 +11,7 @@ import android.widget.LinearLayout;
 import com.innotek.demotestproject.R;
 import com.innotek.demotestproject.view.SearchEditView;
 
-public class SearchEditTextActivity2 extends Activity   {
+public class SearchEditTextActivity2 extends BaseActivity   {
 
 
     private EditText et;

@@ -15,6 +15,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="text的绘制"/>
+    <Button
+        android:id="@+id/btn_horizonlayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="横向stepview"/>
 </LinearLayout>
 
 </LinearLayout>
