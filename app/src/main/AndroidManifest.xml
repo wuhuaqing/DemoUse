@@ -37,7 +37,6 @@
         <activity android:name=".recyclerview.RecyclerActivity" />
         <activity android:name=".activity.GaintViewActivity" />
         <activity android:name=".activity.PayBoardActivity" />
-        <activity android:name=".kotlinpackage.KotlinMainActivity" />
         <activity
             android:name=".activity.FloatMenuActivity"
             android:screenOrientation="portrait" />
@@ -77,8 +76,15 @@
         <activity
             android:name=".activity_sdw.SearchViewActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".activity_sdw.SearchViewBarActivity" />
-        <activity android:name=".activity_view.activity.StepHorezonActivity"></activity>
+        <activity
+            android:name=".activity_sdw.SearchViewBarActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity_view.activity.StepHorezonActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity_view.activity.IndicatorItemViewActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

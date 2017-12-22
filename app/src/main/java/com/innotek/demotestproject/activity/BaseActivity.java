@@ -1,7 +1,5 @@
 package com.innotek.demotestproject.activity;
 
-import android.annotation.TargetApi;
-import android.graphics.Color;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -25,6 +23,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //使用super设置
         super.setContentView(R.layout.activity_base);
         // 经测试在代码里直接声明透明状态栏更有效
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
@@ -48,7 +47,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     @Override
     public void setContentView(View view) {
-        LinearLayout  rootLayout = (LinearLayout) findViewById(R.id.root_layout);
+        LinearLayout rootLayout = (LinearLayout) findViewById(R.id.root_layout);
         if (rootLayout == null) return;
         rootLayout.addView(view, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         initToolBar();

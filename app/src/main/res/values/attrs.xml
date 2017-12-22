@@ -18,4 +18,40 @@
         <!-- 背景边框的圆角大小 -->
         <attr name="bgCorner" format="dimension"/>
     </declare-styleable>
+
+    <declare-styleable name="Indicatorview">
+        <!--指示条item背景图-->
+        <attr name="itembg" format="reference"/>
+        <!--tag背景图-->
+        <attr name="itemtagbg" format="reference"/>
+        <!--tag字体大小-->
+        <attr name="itemtagsize" format="dimension"/>
+        <!--tag字体颜色-->
+        <attr name="itemtagcolor" format="color"/>
+        <!--status背景图-->
+        <attr name="itemstatusbg" format="reference"/>
+        <!--status字体大小-->
+        <attr name="itemstatussize" format="dimension"/>
+        <!--status字体颜色-->
+        <attr name="itemstatuscolor" format="color"/>
+
+    </declare-styleable>
+
+    <!--单个指示器样式-->
+  <declare-styleable name="IndicatorItemview">
+      <!--指示器图标-->
+      <attr name="indicatorimg" format="reference"></attr>
+      <!--指示器半径-->
+      <attr name="indicatorradius" format="dimension"></attr>
+      <!--指示器颜色-->
+      <attr name="indicatorcolor" format="color"></attr>
+      <!--线的高度-->
+      <attr name="linesize" format="dimension"></attr>
+      <!--线的颜色-->
+      <attr name="linecolor" format="color"></attr>
+      <!--线的状态  true  实现  false 虚线-->
+      <attr name="linestatus" format="boolean"></attr>
+      <!--线的长度 -->
+      <attr name="lineslength" format="dimension"></attr>
+  </declare-styleable>
 </resources>
