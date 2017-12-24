@@ -5,12 +5,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <com.innotek.demotestproject.view.indicatorview.IndicatorItemView
+        android:id="@+id/iiview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
         app:indicatorcolor="@color/color_1C6BED"
-        app:indicatorradius="10dp"
+        app:indicatorradius="15dp"
         app:linecolor="@color/color_4292AF"
-        app:lineslength="60dp"
+        app:lineslength="50dp"
+        app:indicatortext= "开入"
         />
 
   <!--  app:indicatorcolor="@color/color_1C6BED"

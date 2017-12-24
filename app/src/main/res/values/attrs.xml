@@ -53,5 +53,7 @@
       <attr name="linestatus" format="boolean"></attr>
       <!--线的长度 -->
       <attr name="lineslength" format="dimension"></attr>
+      <!--指示器中默认文字大小 -->
+      <attr name="indicatortext" format="string"></attr>
   </declare-styleable>
 </resources>

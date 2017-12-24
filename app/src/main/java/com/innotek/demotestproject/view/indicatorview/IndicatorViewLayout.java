@@ -69,7 +69,7 @@ public class IndicatorViewLayout extends LinearLayout {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-
+ 
         int widthMode = MeasureSpec.getMode(widthMeasureSpec);
         this.indicatorViewWidth = MeasureSpec.getSize(widthMeasureSpec);
 
@@ -125,6 +125,7 @@ public class IndicatorViewLayout extends LinearLayout {
             for (int i = 0; i < strtags.length; i++) {
                 addView(strtags[i], statuss[i], params);
             }
+            requestLayout();
         }
     }
 
