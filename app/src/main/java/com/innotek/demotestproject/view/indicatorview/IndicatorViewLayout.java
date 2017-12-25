@@ -10,6 +10,7 @@ import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -125,7 +126,7 @@ public class IndicatorViewLayout extends LinearLayout {
             for (int i = 0; i < strtags.length; i++) {
                 addView(strtags[i], statuss[i], params);
             }
-            requestLayout();
+
         }
     }
 
@@ -148,7 +149,7 @@ public class IndicatorViewLayout extends LinearLayout {
     private View createItem(String tag, String status) {
         ViewGroup childView = (ViewGroup) View.inflate(context, R.layout.layout_indicatorview, null);
 
-        IndicatorItemView iv_step = (IndicatorItemView) childView.findViewById(R.id.iv_step);
+        ImageView iv_step = (ImageView) childView.findViewById(R.id.iv_step);
         TextView tagView = (TextView) childView.findViewById(R.id.tv_number);
         TextView tv_status = (TextView) childView.findViewById(R.id.tv_status);
         int chilecount = childView.getChildCount();
@@ -159,15 +160,7 @@ public class IndicatorViewLayout extends LinearLayout {
         }
 
         ViewGroup.LayoutParams layoutParams = iv_step.getLayoutParams();
-      /*  int measureHeight = iv_step.getMeasuredHeight();
-        if(itemHight >measureHeight){
-            layoutParams.height = itemHight;
-        }*/
-        layoutParams.height = ViewGroup.LayoutParams.WRAP_CONTENT;
-        layoutParams.width = itemWidth;
-        iv_step.setLayoutParams(layoutParams);
-        //指示条长度
-        iv_step.setLineslength(itemWidth);
+
         refitText(tagView, tag, itemHight);
         refitText(tv_status, status, itemHight);
 

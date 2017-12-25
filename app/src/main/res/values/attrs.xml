@@ -2,7 +2,7 @@
 <resources>
     <declare-styleable name="PasswordEditText">
         <!-- 密码的个数 -->
-        <attr name="passwordNumber" format="integer"/>
+        <attr name="passwordNumber" format="integer" />
         <!-- 密码圆点的半径 -->
         <attr name="passwordRadius" format="dimension" />
         <!-- 密码圆点的颜色 -->
@@ -16,44 +16,50 @@
         <!-- 背景边框的大小 -->
         <attr name="bgSize" format="dimension" />
         <!-- 背景边框的圆角大小 -->
-        <attr name="bgCorner" format="dimension"/>
+        <attr name="bgCorner" format="dimension" />
     </declare-styleable>
 
     <declare-styleable name="Indicatorview">
         <!--指示条item背景图-->
-        <attr name="itembg" format="reference"/>
+        <attr name="itembg" format="reference" />
         <!--tag背景图-->
-        <attr name="itemtagbg" format="reference"/>
+        <attr name="itemtagbg" format="reference" />
         <!--tag字体大小-->
-        <attr name="itemtagsize" format="dimension"/>
+        <attr name="itemtagsize" format="dimension" />
         <!--tag字体颜色-->
-        <attr name="itemtagcolor" format="color"/>
+        <attr name="itemtagcolor" format="color" />
         <!--status背景图-->
-        <attr name="itemstatusbg" format="reference"/>
+        <attr name="itemstatusbg" format="reference" />
         <!--status字体大小-->
-        <attr name="itemstatussize" format="dimension"/>
+        <attr name="itemstatussize" format="dimension" />
         <!--status字体颜色-->
-        <attr name="itemstatuscolor" format="color"/>
+        <attr name="itemstatuscolor" format="color" />
 
     </declare-styleable>
 
     <!--单个指示器样式-->
-  <declare-styleable name="IndicatorItemview">
-      <!--指示器图标-->
-      <attr name="indicatorimg" format="reference"></attr>
-      <!--指示器半径-->
-      <attr name="indicatorradius" format="dimension"></attr>
-      <!--指示器颜色-->
-      <attr name="indicatorcolor" format="color"></attr>
-      <!--线的高度-->
-      <attr name="linesize" format="dimension"></attr>
-      <!--线的颜色-->
-      <attr name="linecolor" format="color"></attr>
-      <!--线的状态  true  实现  false 虚线-->
-      <attr name="linestatus" format="boolean"></attr>
-      <!--线的长度 -->
-      <attr name="lineslength" format="dimension"></attr>
-      <!--指示器中默认文字大小 -->
-      <attr name="indicatortext" format="string"></attr>
-  </declare-styleable>
+    <declare-styleable name="IndicatorItemview">
+        <!--指示器图标-->
+        <attr name="indicatorimg" format="reference"></attr>
+        <!--指示器半径-->
+        <attr name="indicatorradius" format="dimension"></attr>
+        <!--指示器颜色-->
+        <attr name="indicatorcolor" format="color"></attr>
+        <!--线的高度-->
+        <attr name="linesize" format="dimension"></attr>
+        <!--线的颜色-->
+        <attr name="linecolor" format="color"></attr>
+        <!--线的状态  true  实现  false 虚线-->
+        <attr name="linestatus" format="boolean"></attr>
+        <!--线的长度 -->
+        <attr name="lineslength" format="dimension"></attr>
+        <!--指示器中默认文字大小 -->
+        <attr name="indicatortext" format="string"></attr>
+        <!--指示器中默认文字颜色 -->
+        <attr name="indicatortextcolor" format="color"></attr>
+        <!--指示器是否有上部文字 -->
+        <attr name="indicatorhasabovetext" format="boolean"></attr>
+        <!--指示器是否有下部文字 -->
+        <attr name="indicatorhasbuttomtext" format="boolean"></attr>
+    </declare-styleable>
 </resources>

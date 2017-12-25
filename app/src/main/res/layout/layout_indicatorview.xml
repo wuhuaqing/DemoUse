@@ -13,16 +13,11 @@
         android:gravity="center"
         android:text="TAG" />
 
-    <com.innotek.demotestproject.view.indicatorview.IndicatorItemView
+    <ImageView
         android:id="@+id/iv_step"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:indicatorcolor="@color/color_1C6BED"
-        app:indicatorradius="10dp"
-        app:linecolor="@color/color_4292AF"
-        app:lineslength="30dp"
-       ></com.innotek.demotestproject.view.indicatorview.IndicatorItemView>
-
+        android:background="@mipmap/ic_stephor"/>
     <TextView
         android:id="@+id/tv_status"
         android:layout_width="wrap_content"

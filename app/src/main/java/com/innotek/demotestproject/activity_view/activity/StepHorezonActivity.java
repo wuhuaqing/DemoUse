@@ -19,16 +19,17 @@ public class StepHorezonActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_step_horezon);
-       //   ll_stepviewhorizon = (LinearLayout) findViewById(R.id.ll_stepviewhorizon);
-       //  setStepView();
-       // IndicatorViewLayout ivlayout = (IndicatorViewLayout) findViewById(R.id.ivlayout);
-        // IndicatorViewLayout ivlayout2 = (IndicatorViewLayout) findViewById(R.id.ivlayout2);
-        //   ivlayout.initStepViewData(tags,statuss);
-        //   ivlayout2.initStepViewData(tags,statuss);
+        ll_stepviewhorizon = (LinearLayout) findViewById(R.id.ll_stepviewhorizon);
+        String[] tags = new String[]{"1", "2", "3"};//"4"
+        String[] statuss = new String[]{"添加", "删除", "修改"};//,"查询一下下咯"
+        setStepView();
+        IndicatorViewLayout ivlayout = (IndicatorViewLayout) findViewById(R.id.ivlayout);
+        IndicatorViewLayout ivlayout2 = (IndicatorViewLayout) findViewById(R.id.ivlayout2);
+        ivlayout.initStepViewData(tags, statuss);
+        ivlayout2.initStepViewData(tags, statuss);
         IndicatorViewLayout ivlayout1 = (IndicatorViewLayout) findViewById(R.id.ivlayout1);
-        String[] tags = new String[]{"1","2","3" };//"4"
-        String[] statuss = new String[]{"添加","删除","修改"};//,"查询一下下咯"
-        ivlayout1.initStepViewData(tags,statuss);
+
+        ivlayout1.initStepViewData(tags, statuss);
 
 
     }
@@ -42,31 +43,31 @@ public class StepHorezonActivity extends BaseActivity {
         ll_stepviewhorizon.setVisibility(View.VISIBLE);
         //父布局左间距50dp
         LinearLayout.LayoutParams ll_stepviewhorizonLayoutParams = (LinearLayout.LayoutParams) ll_stepviewhorizon.getLayoutParams();
-        ll_stepviewhorizonLayoutParams.setMargins(DensityUtil.dip2px(this,50),0,0,0);
+        ll_stepviewhorizonLayoutParams.setMargins(DensityUtil.dip2px(this, 50), 0, 0, 0);
         ll_stepviewhorizon.setLayoutParams(ll_stepviewhorizonLayoutParams);
 
-       //子布局均分
+        //子布局均分
         DisplayMetrics dm = DensityUtil.getDisplayMetrics(this);
         int widthPixels = dm.widthPixels;
-        int widthDIP = DensityUtil.px2dip(this,widthPixels);
-        int itemWidth = (widthDIP-100)/3;
+        int widthDIP = DensityUtil.px2dip(this, widthPixels);
+        int itemWidth = (widthDIP - 100) / 3;
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(DensityUtil.dip2px(StepHorezonActivity.this, itemWidth),
                 LinearLayout.LayoutParams.WRAP_CONTENT);
-       // params.setMargins(DensityUtil.dip2px(this,50),0,0,0);
-        addView(R.mipmap.ic_stephor, "1", "添加",params);
-        addView(R.mipmap.ic_stephor, "2", "删除",params);
-        addView(R.mipmap.ic_stephor, "3", "修改",params);
+        // params.setMargins(DensityUtil.dip2px(this,50),0,0,0);
+        addView(R.mipmap.ic_stephor, "1", "添加", params);
+        addView(R.mipmap.ic_stephor, "2", "删除", params);
+        addView(R.mipmap.ic_stephor, "3", "修改", params);
 
     }
 
 
-    private void addView(int imagId, String strId,String status, LinearLayout.LayoutParams params) {
+    private void addView(int imagId, String strId, String status, LinearLayout.LayoutParams params) {
         View v = createItem(imagId, strId, status);
         //  v.setId(strId);
         ll_stepviewhorizon.addView(v, params);
     }
 
-    private View createItem(int resid, String tag,String status) {
+    private View createItem(int resid, String tag, String status) {
         View childView = View.inflate(this, R.layout.layout_indicatorview, null);
         TextView tagView = (TextView) childView.findViewById(R.id.tv_number);
         TextView tv_status = (TextView) childView.findViewById(R.id.tv_status);
