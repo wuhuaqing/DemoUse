@@ -4,5 +4,6 @@
 
     <style name="BaseAppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowTranslucentStatus">true</item>
+        <dimen name="toolbar_padding_top">25dp</dimen>
     </style>
 </resources>

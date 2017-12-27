@@ -1,4 +1,5 @@
 package com.innotek.demotestproject.activity_sdw;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -12,7 +13,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
-public class SPWDemoActivity extends BaseActivity  {
+public class SPWDemoActivity extends BaseActivity {
     private Unbinder bind;
     @BindView(R.id.btn_coordidemo1)
     public Button btn_coordidemo1;
@@ -22,6 +23,10 @@ public class SPWDemoActivity extends BaseActivity  {
     public Button btn_drawerlayout;
     @BindView(R.id.btn_serachview)
     public Button btn_serachview;
+
+    @BindView(R.id.btn_toolbar)
+    public Button btn_toolbar;
+
     @BindView(R.id.toolbar)
     public Toolbar toolbar;
 
@@ -34,25 +39,31 @@ public class SPWDemoActivity extends BaseActivity  {
         btn_coordidemo1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SPWDemoActivity.this,CoordinatorLayoutDemo1Actvity.class));
+                startActivity(new Intent(SPWDemoActivity.this, CoordinatorLayoutDemo1Actvity.class));
             }
         });
         btn_coordidemo2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SPWDemoActivity.this,CoordinatorLayoutDemo2Actvity.class));
+                startActivity(new Intent(SPWDemoActivity.this, CoordinatorLayoutDemo2Actvity.class));
             }
         });
         btn_drawerlayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SPWDemoActivity.this,DrawerLayoutActivity.class));
+                startActivity(new Intent(SPWDemoActivity.this, DrawerLayoutActivity.class));
             }
         });
         btn_serachview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SPWDemoActivity.this,SearchViewActivity.class));
+                startActivity(new Intent(SPWDemoActivity.this, SearchViewActivity.class));
+            }
+        });
+        btn_toolbar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SPWDemoActivity.this, ToolBarDemoActivity.class));
             }
         });
     }

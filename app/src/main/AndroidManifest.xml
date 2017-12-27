@@ -85,6 +85,7 @@
         <activity
             android:name=".activity_view.activity.IndicatorItemViewActivity"
             android:screenOrientation="portrait" />
+        <activity android:name=".activity_sdw.ToolBarDemoActivity"></activity>
     </application>
 
 </manifest>

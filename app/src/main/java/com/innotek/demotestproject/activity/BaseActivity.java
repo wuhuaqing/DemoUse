@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.innotek.demotestproject.DemoProApplication;
 import com.innotek.demotestproject.R;
@@ -19,6 +20,7 @@ import com.squareup.leakcanary.RefWatcher;
 public abstract class BaseActivity extends AppCompatActivity {
 
     public Toolbar toolbar;
+    public TextView tv_centertitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +37,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     public void initToolBar() {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
+        tv_centertitle = (TextView) toolbar.findViewById(R.id.tv_centertitle);
         if (toolbar != null) {
             setSupportActionBar(toolbar);
         }
