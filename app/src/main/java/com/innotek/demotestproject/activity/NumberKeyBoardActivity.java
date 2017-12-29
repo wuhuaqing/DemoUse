@@ -87,6 +87,7 @@ public class NumberKeyBoardActivity extends BaseActivity {
                 } else {
                     paymentMoneyTemp = paymentMoneyTemp + number;
                 }
+                paymentMoney = paymentMoneyTemp;
                 et.setText(paymentMoney);
                 /*boolean isMatchMoneyFormat = StringUtils.isMatches(paymentMoneyTemp, "^(([1-9]{1}\\d*)|([0]{1}))(\\.(\\d){0,2})?$");
                  //匹配则展示在输入框中

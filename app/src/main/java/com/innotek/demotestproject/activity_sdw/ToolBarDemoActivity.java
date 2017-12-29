@@ -34,9 +34,9 @@ public class ToolBarDemoActivity extends BaseActivity {
                 finish();
             }
         });
-
-       tv_centertitle.setText("正标题");
-       toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+        toolbar.setTitle("heiei");
+        tv_centertitle.setText("正标题");
+        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
            @Override
            public boolean onMenuItemClick(MenuItem item) {
                switch (item.getItemId()) {

@@ -48,7 +48,7 @@ public class KeyBoardAdapter extends BaseAdapter {
             viewHolder = new ViewHolder();
             viewHolder.btnKey = (TextView) convertView.findViewById(R.id.btn_keys);
             viewHolder.imgDelete = (RelativeLayout) convertView.findViewById(R.id.imgDelete);
-            viewHolder.iv_img_delete = (ImageView) convertView.findViewById(R.id.iv_img_delete);
+            viewHolder.iv_img = (ImageView)  convertView.findViewById(R.id.iv_img);
 
             convertView.setTag(viewHolder);
         } else {
@@ -57,15 +57,15 @@ public class KeyBoardAdapter extends BaseAdapter {
 
         if (position == 9) {
             viewHolder.imgDelete.setVisibility(View.VISIBLE);
-            viewHolder.iv_img_delete.setVisibility(View.VISIBLE);
-            viewHolder.iv_img_delete.setImageResource(R.drawable.img_psw_bg);
+            viewHolder.iv_img.setVisibility(View.VISIBLE);
+            viewHolder.iv_img.setImageResource(R.drawable.img_psw_bg);
             viewHolder.btnKey.setVisibility(View.VISIBLE);
             viewHolder.btnKey.setBackgroundResource(R.drawable.selector_gird_item);
         } else if (position == 11) {
             //viewHolder.btnKey.setBackgroundResource(R.drawable.keyboard_delete_img);
             viewHolder.imgDelete.setVisibility(View.VISIBLE);
-            viewHolder.iv_img_delete.setVisibility(View.VISIBLE);
-            viewHolder.iv_img_delete.setImageResource(R.drawable.keyboard_delete_img);
+            viewHolder.iv_img.setVisibility(View.VISIBLE);
+            viewHolder.iv_img.setImageResource(R.drawable.keyboard_delete_img);
             viewHolder.btnKey.setVisibility(View.VISIBLE);
             viewHolder.btnKey.setBackgroundResource(R.drawable.selector_gird_item);
 
@@ -82,9 +82,9 @@ public class KeyBoardAdapter extends BaseAdapter {
     /**
      * 存放控件
      */
-    public final class ViewHolder {
+    public  final class ViewHolder {
         public TextView btnKey;
         public RelativeLayout imgDelete;
-        public ImageView iv_img_delete;
+        public ImageView iv_img;
     }
 }
