@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.innotek.demotestproject.activity_sdw.SlidrawActivity">
+
+    <TextView
+        android:id="@+id/tv_dd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="adddfdfdf"
+        android:layout_centerInParent="true"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+        <!--可以滑动的抽屉-->
+        <!--handle是把手,content是抽屉里的内容-->
+        <com.innotek.demotestproject.view.WrapSlidingDrawer
+            android:id="@+id/sliddrawer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:content="@+id/content"
+            android:handle="@+id/handle">
+
+            <TextView
+                android:id="@+id/handle"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:text="共搜索到100个结果"/>
+
+            <LinearLayout
+                android:id="@+id/content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ListView
+                    android:id="@+id/listview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                </ListView>
+
+            </LinearLayout>
+
+        </com.innotek.demotestproject.view.WrapSlidingDrawer>
+    </RelativeLayout>
+</RelativeLayout>

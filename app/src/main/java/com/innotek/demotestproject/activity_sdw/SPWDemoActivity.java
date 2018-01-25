@@ -30,6 +30,9 @@ public class SPWDemoActivity extends BaseActivity {
     @BindView(R.id.toolbar)
     public Toolbar toolbar;
 
+    @BindView(R.id.btn_slidraw)
+    public Button btn_slidraw;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +67,12 @@ public class SPWDemoActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(SPWDemoActivity.this, ToolBarDemoActivity.class));
+            }
+        });
+        btn_slidraw.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SPWDemoActivity.this, SlidrawActivity.class));
             }
         });
     }

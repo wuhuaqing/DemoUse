@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <com.innotek.demotestproject.view.indicatorview.IndicatorItemView
@@ -21,4 +22,6 @@
     app:indicatorradius="10dp"
     app:linecolor="@color/color_4292AF"
     app:lineslength="60dp"-->
+
+
 </LinearLayout>

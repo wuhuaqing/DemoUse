@@ -8,7 +8,6 @@ import android.widget.TextView;
 
 import com.innotek.demotestproject.R;
 import com.innotek.demotestproject.activity.BaseActivity;
-import com.innotek.demotestproject.view.indicatorview.IndicatorViewLayout;
 import com.innotek.demotestproject.view.piechart.DensityUtil;
 
 public class StepHorezonActivity extends BaseActivity {
@@ -23,13 +22,13 @@ public class StepHorezonActivity extends BaseActivity {
         String[] tags = new String[]{"1", "2", "3"};//"4"
         String[] statuss = new String[]{"添加", "删除", "修改"};//,"查询一下下咯"
         setStepView();
-        IndicatorViewLayout ivlayout = (IndicatorViewLayout) findViewById(R.id.ivlayout);
+      /*  IndicatorViewLayout ivlayout = (IndicatorViewLayout) findViewById(R.id.ivlayout);
         IndicatorViewLayout ivlayout2 = (IndicatorViewLayout) findViewById(R.id.ivlayout2);
         ivlayout.initStepViewData(tags, statuss);
         ivlayout2.initStepViewData(tags, statuss);
         IndicatorViewLayout ivlayout1 = (IndicatorViewLayout) findViewById(R.id.ivlayout1);
 
-        ivlayout1.initStepViewData(tags, statuss);
+        ivlayout1.initStepViewData(tags, statuss);*/
 
 
     }

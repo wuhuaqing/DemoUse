@@ -35,5 +35,12 @@ public class ViewMainActivity extends BaseActivity {
 
             }
         });
+        findViewById(R.id.btn_timestepitem).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ViewMainActivity.this, TimeStepViewActivity.class));
+
+            }
+        });
     }
 }

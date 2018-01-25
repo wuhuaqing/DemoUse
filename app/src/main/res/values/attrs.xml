@@ -62,4 +62,15 @@
         <!--指示器是否有下部文字 -->
         <attr name="indicatorhasbuttomtext" format="boolean"></attr>
     </declare-styleable>
+
+    <!--时间指示器样式-->
+
+    <declare-styleable name="TimestepView">
+        <!--指示器半径-->
+        <attr name="indiradius" format="dimension"></attr>
+        <!--指示器颜色-->
+        <attr name="indicolor" format="color"></attr>
+        <!--线的颜色-->
+        <attr name="indilinecolor" format="color"></attr>
+    </declare-styleable>
 </resources>

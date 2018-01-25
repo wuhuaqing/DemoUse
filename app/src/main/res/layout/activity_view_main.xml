@@ -6,26 +6,43 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.innotek.demotestproject.activity_view.activity.ViewMainActivity">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal">
-    <Button
-        android:id="@+id/btn_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="text的绘制"/>
-    <Button
-        android:id="@+id/btn_horizonlayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="横向stepview"/>
 
-    <Button
-        android:id="@+id/btn_stepviewitem"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="stepviewitem"/>
-</LinearLayout>
+        android:orientation="horizontal">
 
+        <Button
+            android:id="@+id/btn_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="text的绘制" />
+
+        <Button
+            android:id="@+id/btn_horizonlayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="横向stepview" />
+
+        <Button
+            android:id="@+id/btn_stepviewitem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="stepviewitem" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <Button
+            android:id="@+id/btn_timestepitem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="timestepitem" />
+    </LinearLayout>
 </LinearLayout>
