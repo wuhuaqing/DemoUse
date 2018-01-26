@@ -73,4 +73,11 @@
         <!--线的颜色-->
         <attr name="indilinecolor" format="color"></attr>
     </declare-styleable>
+
+    <!--卡片翻转属性sty-->
+    <declare-styleable name="CardFlip">
+        <attr name="cf_front" format="reference" />
+        <attr name="cf_back" format="reference" />
+        <attr name="cf_animationDuration" format="integer" />
+    </declare-styleable>
 </resources>
