@@ -1,6 +1,6 @@
 apply plugin: 'com.android.application'
 //butterknife
-apply plugin: 'com.jakewharton.butterknife'
+// apply plugin: 'com.jakewharton.butterknife'
 
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
@@ -8,11 +8,11 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'org.greenrobot.greendao' // apply plugin
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    buildToolsVersion "27.0.3"
 
     defaultConfig {
         applicationId "com.innotek.demotestproject"
-        minSdkVersion 11
+        minSdkVersion 16
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -49,21 +49,25 @@ dependencies {
     //compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:25.0.1'
+    // compile 'com.android.support:appcompat-v7:25.+'
     //butterknife
-    compile 'com.jakewharton:butterknife:8.4.0'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     //leakcanary
     debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5'
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
-    compile 'com.android.support:recyclerview-v7:25.1.0'
+    // compile 'com.android.support:recyclerview-v7:25.1.0'
     //kotlin
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     //compile project(':pullToReflushLibrary-1.0')
     compile project(':baselibrary')
     compile project(':NumberKeyBoardView')
+    compile project(':weexcontainmoudle')
+
     //greendao
     compile 'org.greenrobot:greendao:3.0.1'// add library
-    compile 'com.android.support:design:23.1.1'
+     compile 'com.android.support:design:25.+'
+
+    implementation 'com.roughike:bottom-bar:2.3.1'
 
 }

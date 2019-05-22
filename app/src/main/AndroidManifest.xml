@@ -85,9 +85,17 @@
         <activity
             android:name=".activity_view.activity.IndicatorItemViewActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".activity_sdw.ToolBarDemoActivity"    android:screenOrientation="portrait" />
-        <activity android:name=".activity_sdw.SlidrawActivity"    android:screenOrientation="portrait" />
-        <activity android:name=".activity_view.activity.TimeStepViewActivity"   android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity_sdw.ToolBarDemoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity_sdw.SlidrawActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity_view.activity.TimeStepViewActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".activity.BottombarActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

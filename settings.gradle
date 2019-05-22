@@ -1,4 +1,4 @@
-include ':app', ':baselibrary', ':numberkeyboard', ':NumberKeyBoardView'
+include ':app', ':baselibrary' , ':NumberKeyBoardView', ':weexcontainmoudle'
 
 //include ':pullToReflushLibrary-1.0'
 //project(':pullToReflushLibrary-1.0').projectDir = new File('E:\\demo_as\\pullToReflushLibrary_AS_V1.0')

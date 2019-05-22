@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        id="@+id/tab_one"
+        icon="@drawable/ic_favorite_white_24dp"
+        activeColor="@color/bottom_item_selected"
+        inActiveColor="@color/bottom_item_unselected"
+        title="推荐"
+        barColorWhenSelected="@color/bottom_bg_white" />
+
+    <!--icon="@drawable/selector_main_home"-->
+    <tab
+        id="@+id/tab_two"
+        icon="@drawable/ic_favorite_white_24dp"
+        title="动态"
+        inActiveColor="@color/bottom_item_unselected"
+        activeColor="@color/bottom_item_selected"
+        barColorWhenSelected="@color/bottom_bg_white" />
+<!--
+    <tab
+        id="@+id/tab_thr"
+        icon="@drawable/ic_favorite_white_24dp"
+        title="一言"
+        inActiveColor="@color/bottom_item_unselected"
+        activeColor="@color/bottom_item_selected"
+        barColorWhenSelected="@color/bottom_bg_white" />-->
+    <tab
+        id="@+id/tab_thr"
+        icon="@drawable/ic_favorite_white_24dp"
+        title="我的"
+        inActiveColor="@color/bottom_item_unselected"
+        activeColor="@color/bottom_item_selected"
+        barColorWhenSelected="@color/bottom_bg_white" />
+</tabs>

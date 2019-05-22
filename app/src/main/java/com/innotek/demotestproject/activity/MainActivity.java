@@ -6,6 +6,7 @@ import com.innotek.demotestproject.R;
 import com.innotek.demotestproject.activity_sdw.SPWDemoActivity;
 import com.innotek.demotestproject.activity_view.activity.ShowViewActivity;
 import com.innotek.demotestproject.activity_view.activity.ViewMainActivity;
+import com.weexcontainmoudle.baseview.BaseWeexActivity;
 
 public class MainActivity extends BaseActivity {
 
@@ -36,6 +37,12 @@ public class MainActivity extends BaseActivity {
             }
         });
         findViewById(R.id.changeview).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,GaintViewActivity.class));
+            }
+        });
+        findViewById(R.id.payboard).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this,GaintViewActivity.class));
@@ -133,12 +140,20 @@ public class MainActivity extends BaseActivity {
                 startActivity(new Intent(MainActivity.this, ShanGActivity.class));
             }
         });
-        findViewById(R.id.nongshang).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.weex).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, NongShangBankActivity.class));
+                startActivity(new Intent(MainActivity.this, BaseWeexActivity.class));
             }
         });
+        findViewById(R.id.bottombar).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, BottombarActivity.class));
+            }
+        });
+
+
     }
 
 }

@@ -61,7 +61,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         //内存监控
-        RefWatcher refWatcher = DemoProApplication.getRefWatcher(this);
-        refWatcher.watch(this);
+//        RefWatcher refWatcher = DemoProApplication.getRefWatcher(this);
+//        refWatcher.watch(this);
     }
 }

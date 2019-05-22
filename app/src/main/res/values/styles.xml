@@ -1,12 +1,12 @@
 <resources>
 
     <!-- Base application theme. -->
-<!--    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        &lt;!&ndash; Customize your theme here. &ndash;&gt;
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-    </style>-->
+    <!--    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+            &lt;!&ndash; Customize your theme here. &ndash;&gt;
+            <item name="colorPrimary">@color/colorPrimary</item>
+            <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+            <item name="colorAccent">@color/colorAccent</item>
+        </style>-->
     <style name="AppTheme" parent="BaseAppTheme" />
 
     <style name="BaseAppTheme" parent="BaseAppTheme.NoActionBar" />
@@ -17,11 +17,12 @@
         <item name="colorPrimary">@color/color_44C679</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+
     <declare-styleable name="ChooseEditText">
-        <attr name="cet_ChooseBgColor" format="reference|color"/>
-        <attr name="cet_ChooseTextColor" format="reference|color"/>
-        <attr name="cet_TextSize" format="reference|dimension"/>
-        <attr name="cet_Hint" format="reference|string"/>
+        <attr name="cet_ChooseBgColor" format="reference|color" />
+        <attr name="cet_ChooseTextColor" format="reference|color" />
+        <attr name="cet_TextSize" format="reference|dimension" />
+        <attr name="cet_Hint" format="reference|string" />
     </declare-styleable>
 
     <!-- 高版本 -->
@@ -29,7 +30,10 @@
         <item name="android:listPreferredItemHeightSmall">50dp</item>
     </style>
 
+    <style name="textstyle">
 
+        <item name="android:textSize">16sp</item>
+    </style>
 
 
 </resources>
