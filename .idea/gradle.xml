@@ -11,7 +11,7 @@
             <option value="$PROJECT_DIR$/NumberKeyBoardView" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/baselibrary" />
-            <option value="$PROJECT_DIR$/numberkeyboard" />
+            <option value="$PROJECT_DIR$/weexcontainmoudle" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

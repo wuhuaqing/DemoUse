@@ -6,7 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/NumberKeyBoardView/NumberKeyBoardView.iml" filepath="$PROJECT_DIR$/NumberKeyBoardView/NumberKeyBoardView.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/baselibrary/baselibrary.iml" filepath="$PROJECT_DIR$/baselibrary/baselibrary.iml" />
-      <module fileurl="file://$PROJECT_DIR$/numberkeyboard/numberkeyboard.iml" filepath="$PROJECT_DIR$/numberkeyboard/numberkeyboard.iml" />
+      <module fileurl="file://$PROJECT_DIR$/weexcontainmoudle/weexcontainmoudle.iml" filepath="$PROJECT_DIR$/weexcontainmoudle/weexcontainmoudle.iml" />
     </modules>
   </component>
 </project>

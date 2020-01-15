@@ -66,7 +66,7 @@ dependencies {
 
     //greendao
     compile 'org.greenrobot:greendao:3.0.1'// add library
-     compile 'com.android.support:design:25.+'
+    compile 'com.android.support:design:26.+'
 
     implementation 'com.roughike:bottom-bar:2.3.1'
 
