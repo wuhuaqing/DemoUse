@@ -153,6 +153,13 @@ public class MainActivity extends BaseActivity {
             }
         });
 
+        findViewById(R.id.camera).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, CameraActivity.class));
+            }
+        });
+
 
     }
 

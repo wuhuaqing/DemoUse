@@ -46,6 +46,8 @@ buildscript {
     }
 }
 dependencies {
+    implementation 'com.android.support:appcompat-v7:25.+'
+
     //compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
@@ -66,7 +68,7 @@ dependencies {
 
     //greendao
     compile 'org.greenrobot:greendao:3.0.1'// add library
-    compile 'com.android.support:design:26.+'
+    compile 'com.android.support:design:25.+'
 
     implementation 'com.roughike:bottom-bar:2.3.1'
 
