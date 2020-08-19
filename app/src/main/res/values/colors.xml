@@ -17,5 +17,6 @@
     <color name="bottom_item_selected">#0097A7</color>
     <color name="bottom_item_unselected">#BDBDBD</color>
     <color name="bottom_bg_white">#ffffff</color>
+    <color name="gary">#898989</color>
 
 </resources>

@@ -9,13 +9,22 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.os.Looper;
 import android.support.annotation.Nullable;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.View;
+
 import com.innotek.demotestproject.R;
 import com.innotek.demotestproject.view.piechart.DensityUtil;
+
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -24,12 +33,12 @@ import java.util.List;
  */
 
 public class IndicatorItemView extends View {
+
     private Context context;
     private int defaultRadius = 10;
     private int defaultLinesize = 5;
     private int defaultLinelength = 20;
     private boolean defaultLineStatus = true;
-
     private Drawable indicatorDrawable;
     private float indicatorRadius;
     private int indicatorColor;
@@ -46,9 +55,14 @@ public class IndicatorItemView extends View {
     private boolean hasButtomText;//是否有下部文字
     private Paint currentIndexpaint;
     private Paint abovetextPaint;
-    private Paint buttotextPaint;
+    private TextPaint buttotextPaint;
     private Paint dashLinePaint;
-
+    /**
+     * 指示器数据集合
+     */
+    private List<IndicatorBean> indicatorBeanList = new ArrayList<>();
+    private int staticlayoutHeght;
+    private  int  abovetextlenth ;
 
     public IndicatorItemView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
@@ -105,7 +119,7 @@ public class IndicatorItemView extends View {
         abovetextPaint = new Paint();
         abovetextPaint.setAntiAlias(true);
         //下部文字Paint
-        buttotextPaint = new Paint();
+        buttotextPaint = new TextPaint();
         buttotextPaint.setAntiAlias(true);
         //小车图标Paint
         currentIndexpaint = new Paint();
@@ -128,12 +142,15 @@ public class IndicatorItemView extends View {
         //测量得到的高度
         int widthMeasure = MeasureSpec.getSize(widthMeasureSpec);
         int heightMeasure = MeasureSpec.getSize(heightMeasureSpec);
+        //屏幕宽度
+        int screenwidth = DensityUtil.getDisplayMetrics(context).widthPixels;
 
         if (widthMode == MeasureSpec.EXACTLY) {
-            indicatorWidth = widthMeasure;
+            indicatorWidth = widthMeasure - getPaddingLeft() - getPaddingRight();
         } else if (widthMode == MeasureSpec.AT_MOST) {
             //控件宽度
-            indicatorWidth = getPaddingLeft() + getPaddingRight() + (((int) indicatorRadius * 2) + (int) lineLenth) * indicatorBeanList.size();
+            // indicatorWidth = getPaddingLeft() + getPaddingRight() + (((int) indicatorRadius * 2) + (int) lineLenth) * indicatorBeanList.size();
+            indicatorWidth = screenwidth - getPaddingLeft() - getPaddingRight();
         }
 
         if (heightMode == MeasureSpec.EXACTLY) {
@@ -149,18 +166,47 @@ public class IndicatorItemView extends View {
                 indicatorHeight = indicatorHeight + ((int) indicatorRadius * 2);
             }
 
+        } else if (heightMode == MeasureSpec.UNSPECIFIED) {
+            indicatorHeight = ((int) indicatorRadius * 2) + getPaddingTop() + getPaddingBottom();
+            if (hasAboveText) {
+                //圆的高度+ 上文字的高度
+                indicatorHeight = indicatorHeight + ((int) indicatorRadius * 2);
+            }
+            if (hasButtomText) {
+                //圆的高度+ 上文字的高度
+                indicatorHeight = indicatorHeight + ((int) indicatorRadius * 2);
+                if (staticlayoutHeght > 0) {
+                    indicatorHeight += staticlayoutHeght;
+                }
+            }
+
         }
         setMeasuredDimension(indicatorWidth, indicatorHeight);
+        //计算线的长度  屏幕宽度  -  左右padding  - 圆的直径长度
+
+        left = getPaddingLeft();
+        right = getPaddingRight();
+        top = getPaddingTop();
     }
 
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+        if (indicatorBeanList.size() > 3) {//indicatorWidth -left - right
+            lineLenth = (indicatorWidth) / (indicatorBeanList.size() - 1) - 3* indicatorRadius;//(indicatorWidth) / (indicatorBeanList.size() - 1) - 4 * indicatorRadius
+
+        } else if(indicatorBeanList.size() ==3){
+            lineLenth = (indicatorWidth) / (indicatorBeanList.size() - 1) - 3 * indicatorRadius- DensityUtil.dip2px(context, 14);
+        }else {
+            lineLenth = (indicatorWidth - left - right) / 2;
+            lineLenth += (lineLenth) / 2 - DensityUtil.dip2px(context, 14);
+        }
         drawIndicator(canvas);
     }
 
     private int left;//初始左边距
+    private int right;//右边距
     private int top; //初始上边距
     //圆的半径
     private int raduis = 0;
@@ -175,12 +221,10 @@ public class IndicatorItemView extends View {
     //线的终点坐标
     private int endX = 0;
     private int endY = 0;
+    private int carCenterX = 0;
 
     private void drawIndicator(Canvas canvas) {
 
-        //getX() +
-        left = getLeft() + getPaddingLeft();
-        top = getTop() + getPaddingTop();//getY() +
 
         if (indicatorBeanList != null && indicatorBeanList.size() > 0) {
             //圆的半径
@@ -201,40 +245,45 @@ public class IndicatorItemView extends View {
                 startY = startY + raduis * 2;
                 endY = startY;
             }
-
             for (int i = 0; i < indicatorBeanList.size(); i++) {
                 IndicatorBean indicatorBean = indicatorBeanList.get(i);
-
                 //多个圆的横坐标公式
                 centerX = left + raduis + (lenth + raduis + raduis) * i;
+                if(indicatorBean.carIndex ==  i){//小车X坐标
+                    carCenterX = centerX;
+                }
+
                 drawCircleIndicator(canvas, centerX, centerY, indicatorBean.circleIndicatorColor);
                 //画文字
                 drawText(canvas, centerX, centerY, indicatorBean.indicatorText, indicatorBean.indicatorTexttColor);
                 //多条线的横坐标公式
                 startX = left + (raduis * 2) * (i + 1) + lenth * i;
                 endX = startX + lenth;
-                if (indicatorBean.isDashLine)
+                //是否划线
+                if (indicatorBean.hasLine) {
+                    if (indicatorBean.isDashLine)
                     //如果是最后一根虚线，画一半
-                    if (i == indicatorBeanList.size() - 1) {
-                        drawIndicatorDashLine(canvas, startX, startY, endX, endY, indicatorBean.lineColor, true);
+                    {
+                        if (i == indicatorBeanList.size() - 1) {
+                            drawIndicatorDashLine(canvas, startX, startY, endX, endY, indicatorBean.lineColor, true);
+                        } else {
+                            drawIndicatorDashLine(canvas, startX, startY, endX, endY, indicatorBean.lineColor, false);
+                        }
                     } else {
-                        drawIndicatorDashLine(canvas, startX, startY, endX, endY, indicatorBean.lineColor, false);
+                        drawIndicatorLine(canvas, startX, startY, endX, endY, indicatorBean.lineColor);
                     }
-
-                else {
-                    drawIndicatorLine(canvas, startX, startY, endX, endY, indicatorBean.lineColor);
                 }
 
                 //画指示器上部文字
-                if (indicatorBean.isShowAboveText&& !TextUtils.isEmpty(indicatorBean.indicatorAboveText)) {
+                if (indicatorBean.isShowAboveText && !TextUtils.isEmpty(indicatorBean.indicatorAboveText)) {
                     int textY = (int) (raduis * 1.5);
                     textY = centerY - textY;
-                    drawOutSideAboveText(canvas, centerX, textY, indicatorBean.indicatorAboveText, indicatorBean.indicatroAboveTextColor);
+                    drawOutSideAboveText(canvas, i, centerX, textY, abovetextlenth, indicatorBean.indicatorAboveText, indicatorBean.indicatroAboveTextColor);
+                    // drawOutSideAboveText(canvas, i, centerX, textY , indicatorBean.indicatorAboveText, indicatorBean.indicatroAboveTextColor);
                 }
                 if (indicatorBean.isShowButtomText && !TextUtils.isEmpty(indicatorBean.indicatorButtomText)) {
                     //画指示器下部文字
-                    int textButtomY = centerY + raduis * 2;
-                    drawOutSideButtomText(canvas, centerX, textButtomY, indicatorBean.indicatorButtomText, indicatorBean.indicatroButtomTextColor);
+                    drawOutSideButtomText(canvas, i, centerX, centerY, indicatorBean);
                 }
             }
 
@@ -267,6 +316,9 @@ public class IndicatorItemView extends View {
      * @param lineColor
      */
     private void drawIndicatorLine(Canvas canvas, int startX, int startY, int endX, int endY, int lineColor) {
+        if (lineColor == 0) {
+            lineColor = getResources().getColor(R.color.gary);
+        }
         linePaint.setColor(lineColor);
         linePaint.setStrokeWidth(lineSize);
         canvas.drawLine(startX, startY, endX, endY, linePaint);
@@ -274,21 +326,16 @@ public class IndicatorItemView extends View {
 
     /**
      * 画虚线
-     *
-     * @param canvas
-     * @param starX
-     * @param startY
-     * @param endX
-     * @param endY
-     * @param lineColor
      */
     private void drawIndicatorDashLine(Canvas canvas, int starX, int startY, int endX, int endY, int lineColor, boolean drawHalf) {
-
+        if (lineColor == 0) {
+            lineColor = getResources().getColor(R.color.gary);
+        }
         dashLinePaint.setColor(lineColor);
         // 需要加上这句，否则画不出东西
         dashLinePaint.setStyle(Paint.Style.STROKE);
         dashLinePaint.setStrokeWidth(5);
-        dashLinePaint.setPathEffect(new DashPathEffect(new float[]{5, 10}, 0));
+        dashLinePaint.setPathEffect(new DashPathEffect(new float[]{5, 5}, 0));
 
         Path mPath = new Path();
 
@@ -304,27 +351,21 @@ public class IndicatorItemView extends View {
 
     /**
      * 指示器内文字
-     *
-     * @param canvas
-     * @param centerX
-     * @param centerY
-     * @param text
-     * @param textColor
      */
     private void drawText(Canvas canvas, int centerX, int centerY, String text, int textColor) {
 
         //设置默认字体大小
         int textSize = DensityUtil.dip2px(context, 15);
+        if (textColor == 0) {
+            textColor = indicatortextcolor;
+        }
         textPaint.setColor(textColor);
         textPaint.setTextSize(textSize);
         //该方法即为设置基线上那个点究竟是left,center,还是right  设置为center
         textPaint.setTextAlign(Paint.Align.CENTER);
 
         Paint.FontMetrics fontMetrics = textPaint.getFontMetrics();
-        float fontMetricstop = fontMetrics.top;//为基线到字体上边框的距离,即上图中的top
-        float fontMetricsbottom = fontMetrics.bottom;//为基线到字体下边框的距离,即上图中的bottom
-        int baseLineY = (int) (centerY - fontMetricstop / 2 - fontMetricsbottom / 2);//基线中间点的y轴计算公式
-
+        float baseLineY = centerY - (fontMetrics.bottom - fontMetrics.top) / 2 - fontMetrics.top - 5;
         //获取text设置默认字体后的文字长度
         float measureTextLen = textPaint.measureText(text);
         //文字宽度大于圆的宽度
@@ -347,37 +388,68 @@ public class IndicatorItemView extends View {
      * @param canvas
      * @param centerX
      * @param centerY
-     * @param text
-     * @param textColor
+     * @param indicatorBean
      */
-    private void drawOutSideButtomText(Canvas canvas, int centerX, int centerY, String text, int textColor) {
-        //设置默认字体大小
-        int textSize = DensityUtil.dip2px(context, 15);
+    private void drawOutSideButtomText(Canvas canvas, int index, int centerX, int centerY,IndicatorBean indicatorBean) {
+
+        CharSequence text = indicatorBean.indicatorButtomText;
+        int textColor= indicatorBean.indicatroButtomTextColor;
         buttotextPaint.setColor(textColor);
-        buttotextPaint.setTextSize(textSize);
         //该方法即为设置基线上那个点究竟是left,center,还是right  设置为center
         buttotextPaint.setTextAlign(Paint.Align.CENTER);
-        canvas.drawText(text, centerX, centerY, buttotextPaint);
+        //int textLen = (int) buttotextPaint.measureText(text,0,text.length());
+        //第一个和最后一个，位置要往中间靠
+        if (index == 0) {
+            buttotextPaint.setTextAlign(Paint.Align.LEFT);
+            centerX = centerX - raduis;
+        } else if (index == indicatorBeanList.size() - 1) {
+            buttotextPaint.setTextAlign(Paint.Align.RIGHT);
+            //右边文字起始坐标
+            centerX = centerX + raduis + right / 2;
+        }
+        //需要换行显示
+        if(indicatorBean.buttomTextIsNeedNewLine){
+            centerY = (int) (centerY + raduis * 1.5);
+            //设置默认字体大小
+            buttotextPaint.setTextSize(DensityUtil.dip2px(context, 13));
+            canvas.save();
+            canvas.translate(centerX, centerY);
+            // lenth 换行的宽度是线的长度
+            StaticLayout staticLayout = new StaticLayout(text, buttotextPaint, lenth, Layout.Alignment.ALIGN_NORMAL, 1, 0, false);
+            staticLayout.draw(canvas);
+            staticlayoutHeght = staticLayout.getHeight();
+            canvas.restore();
+            requestLayout();
+        }else {//不换行显示
+            buttotextPaint.setTextSize( DensityUtil.dip2px(context, 13));
+            centerY = (int) (centerY + raduis * 2.5);
+            canvas.drawText(text.toString(),centerX,centerY,buttotextPaint);
+        }
 
     }
 
     /**
-     * 上方文字
-     *
-     * @param canvas
-     * @param centerX
-     * @param centerY
-     * @param text
-     * @param textColor
+     * 上方文字, int textLenth
      */
-    private void drawOutSideAboveText(Canvas canvas, int centerX, int centerY, String text, int textColor) {
-
+    private void drawOutSideAboveText(Canvas canvas, int index, int centerX, int centerY, int textLenth,String text, int textColor) {
         abovetextPaint.setColor(textColor);
         //设置默认字体大小
-        int textSize = DensityUtil.dip2px(context, 15);
+        int textSize = DensityUtil.dip2px(context, 12);
         abovetextPaint.setTextSize(textSize);
+
         //该方法即为设置基线上那个点究竟是left,center,还是right  设置为center
         abovetextPaint.setTextAlign(Paint.Align.CENTER);
+
+        //第一个和最后一个，位置要往中间靠
+        if (index == 0) {
+            abovetextPaint.setTextAlign(Paint.Align.LEFT);
+            centerX = centerX - raduis;
+        } else if (index == indicatorBeanList.size() - 1) {
+            abovetextPaint.setTextAlign(Paint.Align.RIGHT);
+            //右边文字起始坐标
+            centerX = centerX + raduis + right / 2;
+        }
+
         canvas.drawText(text, centerX, centerY, abovetextPaint);
 
     }
@@ -395,14 +467,17 @@ public class IndicatorItemView extends View {
      * @param canvas
      */
     private void drawCurrentIndexIcon(Canvas canvas) {
-        Drawable carDarwable = context.getResources().getDrawable(R.mipmap.ic_maincar);
+        Drawable carDarwable = context.getResources().getDrawable(R.drawable.ic_maincar);
         Bitmap carBitmap = drawableToBitmap(carDarwable);
         int carBitmapLeft = 0;
         int carBitmapTop = 0;
         int carHeight = carBitmap.getHeight();
         int carWidth = carBitmap.getWidth();
         carBitmapTop = centerY - carHeight;// centerY - carHeight *
-        carBitmapLeft = centerX - raduis - carWidth - 20;
+
+        carBitmapLeft = carCenterX - raduis - carWidth - 20;
+
+
         canvas.drawBitmap(carBitmap, carBitmapLeft, carBitmapTop, currentIndexpaint);
     }
 
@@ -437,12 +512,10 @@ public class IndicatorItemView extends View {
      * @param lineLenth
      */
     public void setLineslength(int lineLenth) {
-        this.lineLenth = lineLenth ;
-        //this.lineLenth = lineLenth;
-        postInvalidate();
+        this.lineLenth = lineLenth;
+        invalidateView();
     }
 
-    List<IndicatorBean> indicatorBeanList = new ArrayList<>();
 
     /***
      * 设置指示器数据
@@ -450,7 +523,17 @@ public class IndicatorItemView extends View {
      */
     public void setIndicatorData(List<IndicatorBean> indicatorBeanList) {
         this.indicatorBeanList = indicatorBeanList;
-        postInvalidate();
+        invalidateView();
+
     }
+
+    private void invalidateView() {
+        if (Looper.getMainLooper() == Looper.myLooper()) {
+            invalidate();
+        } else {
+            postInvalidate();
+        }
+    }
+
 
 }
