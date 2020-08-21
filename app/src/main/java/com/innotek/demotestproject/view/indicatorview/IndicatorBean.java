@@ -49,7 +49,7 @@ public class IndicatorBean {
     /**
      * 指示器下部文字
      */
-    public CharSequence indicatorButtomText;
+    public String indicatorButtomText;
     /**
      * 指示器下部文字颜色
      */

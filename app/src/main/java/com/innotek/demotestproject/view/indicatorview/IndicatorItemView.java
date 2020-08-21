@@ -17,14 +17,9 @@ import android.text.TextPaint;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.View;
-
 import com.innotek.demotestproject.R;
 import com.innotek.demotestproject.view.piechart.DensityUtil;
-
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -147,7 +142,7 @@ public class IndicatorItemView extends View {
 
         if (widthMode == MeasureSpec.EXACTLY) {
             indicatorWidth = widthMeasure - getPaddingLeft() - getPaddingRight();
-        } else if (widthMode == MeasureSpec.AT_MOST) {
+        } else if (widthMode == MeasureSpec.AT_MOST || widthMode == MeasureSpec.UNSPECIFIED) {
             //控件宽度
             // indicatorWidth = getPaddingLeft() + getPaddingRight() + (((int) indicatorRadius * 2) + (int) lineLenth) * indicatorBeanList.size();
             indicatorWidth = screenwidth - getPaddingLeft() - getPaddingRight();
@@ -483,6 +478,10 @@ public class IndicatorItemView extends View {
 
     /***
      * 将drawable 转化成 bitmap
+     * Bitmap 和 Drawable 的互相转换
+     * 事实上，由于 Bitmap 和 Drawable 是两个不同的概念，因此确切地说它们并不是互相「转换」，⽽是从其中⼀个获得另一个的对象:
+     * Bitmap -> Drawable:创建一个 BitmapDrawable。
+     * Drawable -> Bitmap:如果是 BitmapDrawable，使⽤用 BitmapDrawable.getBitmap() 直接 获取;如果不，创建⼀个 Bitmap 和⼀个 Canvas，使⽤Drawable 通过 Canvas 把内容绘制 到 Bitmap 中。
      * @param drawable
      * @return
      */

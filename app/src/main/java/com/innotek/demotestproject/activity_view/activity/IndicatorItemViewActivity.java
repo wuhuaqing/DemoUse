@@ -57,6 +57,19 @@ public class IndicatorItemViewActivity extends BaseActivity {
         indicatorBean1.indicatorButtomText = "12:20";
         indicatorBean1.indicatroButtomTextColor = getResources().getColor(R.color.color_3A819B);
 
+        IndicatorBean indicatorBean3 = new IndicatorBean();
+        indicatorBean3.isDashLine = false;
+        indicatorBean3.lineColor = Color.BLACK;
+        indicatorBean3.indicatorText = "嗯嗯";
+        indicatorBean3.indicatorTexttColor = Color.WHITE;
+        indicatorBean3.circleIndicatorColor = getResources().getColor(R.color.color_63b520);
+        indicatorBean3.indicatorAboveText = "13";
+        indicatorBean3.indicatroAboveTextColor = getResources().getColor(R.color.color_ff5339);
+        indicatorBean3.isShowAboveText = true;
+        indicatorBean3.isShowButtomText = true;
+        indicatorBean3.indicatorButtomText = "12:20";
+        indicatorBean3.indicatroButtomTextColor = getResources().getColor(R.color.color_3A819B);
+
         IndicatorBean indicatorBean2 = new IndicatorBean();
         indicatorBean2.isDashLine = true;
         indicatorBean2.lineColor = getResources().getColor(R.color.color_4292AF);
@@ -69,9 +82,11 @@ public class IndicatorItemViewActivity extends BaseActivity {
         indicatorBean2.isShowButtomText = true;
         //   indicatorBean2.indicatorButtomText = "13:20";
         indicatorBean2.indicatroButtomTextColor = getResources().getColor(R.color.color_3A819B);
+        indicatorBean2.carIndex = 3;
 
         indicatorBeanList.add(indicatorBean);
         indicatorBeanList.add(indicatorBean1);
+        indicatorBeanList.add(indicatorBean3);
         indicatorBeanList.add(indicatorBean2);
         indicatorItemView.setIndicatorData(indicatorBeanList);
     }

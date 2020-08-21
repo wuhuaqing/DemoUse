@@ -1,5 +1,4 @@
 # DemoUse
 
- ## Stargazers over time
 
- [![Stargazers over time](https://starchart.cc/wuhuaqing/DemoUse.svg)](https://starchart.cc/wuhuaqing/DemoUse)
+[![Anurag's github stats](https://github-readme-stats.vercel.app/api?username=wuhuaqing)](https://github.com/anuraghazra/github-readme-stats)
