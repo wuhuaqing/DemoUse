@@ -6,6 +6,7 @@ import com.innotek.demotestproject.R;
 import com.innotek.demotestproject.activity_sdw.SPWDemoActivity;
 import com.innotek.demotestproject.activity_view.activity.ShowViewActivity;
 import com.innotek.demotestproject.activity_view.activity.ViewMainActivity;
+import com.innotek.demotestproject.jetpack.JetpackMainActivity;
 import com.weexcontainmoudle.baseview.BaseWeexActivity;
 
 public class MainActivity extends BaseActivity {
@@ -42,7 +43,7 @@ public class MainActivity extends BaseActivity {
                 startActivity(new Intent(MainActivity.this,GaintViewActivity.class));
             }
         });
-        findViewById(R.id.payboard).setOnClickListener(new View.OnClickListener() {
+      /*  findViewById(R.id.payboard).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this,GaintViewActivity.class));
@@ -53,7 +54,7 @@ public class MainActivity extends BaseActivity {
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this,GaintViewActivity.class));
             }
-        });
+        });*/
 
         /*findViewById(R.id.btn_kotlin).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -157,6 +158,12 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, CameraActivity.class));
+            }
+        });
+        findViewById(R.id.jetpack).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, JetpackMainActivity.class));
             }
         });
 
