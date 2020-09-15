@@ -14,20 +14,17 @@
         android:orientation="horizontal">
     <Button
         android:id="@+id/pickview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="滚动控件测试" />
+        android:text="滚动控件"
+        style="@style/sty_mainbtn"/>
 
     <Button
         android:id="@+id/snowview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="雪花控件测试" />
+        style="@style/sty_mainbtn"
+        android:text="雪花控件" />
     <Button
         android:id="@+id/changeview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="多图渐变显示" />
+        style="@style/sty_mainbtn"
+        android:text="多图渐变" />
     <Button
         android:id="@+id/payboard"
         android:layout_width="wrap_content"
@@ -41,76 +38,72 @@
         android:orientation="horizontal">
         <Button
             android:id="@+id/btn_kotlin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/sty_mainbtn"
             android:text="kotlin"/>
         <Button
             android:id="@+id/btn_floatmenu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/sty_mainbtn"
             android:text="floatmenu"/>
         <Button
             android:id="@+id/btn_imgloade"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/sty_mainbtn"
             android:text="imaloade"/>
-        <Button
-            android:id="@+id/btn_editsearch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="edit"/>
+
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <Button
+            android:id="@+id/btn_editsearch"
+            style="@style/sty_mainbtn"
+            android:text="edit"/>
+        <Button
             android:id="@+id/btn_zhihu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/sty_mainbtn"
             android:text="知乎"/>
         <Button
             android:id="@+id/btn_greendao"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/sty_mainbtn"
             android:text="greendao"/>
-        <Button
-            android:id="@+id/btn_valueanimtor"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="animtor"/>
-        <Button
-            android:id="@+id/btn_viewdraghelper"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="draghelper"/>
+
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <Button
+            android:id="@+id/btn_valueanimtor"
+            style="@style/sty_mainbtn"
+            android:text="animtor"/>
+        <Button
+            android:id="@+id/btn_viewdraghelper"
+            style="@style/sty_mainbtn"
+            android:text="draghelper"/>
+        <Button
             android:id="@+id/viewshow"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/sty_mainbtn"
             android:text="viewshow"/>
-        <Button
-            android:id="@+id/numberkeyboard"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="数字键盘"/>
 
-         <Button
-            android:id="@+id/viewmain"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="view"/>
-        <Button
-            android:id="@+id/sdw"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="sdw"/>
 
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <Button
+        android:id="@+id/numberkeyboard"
+        style="@style/sty_mainbtn"
+        android:text="数字键盘"/>
+
+    <Button
+        android:id="@+id/viewmain"
+        style="@style/sty_mainbtn"
+        android:text="view"/>
+    <Button
+        android:id="@+id/sdw"
+        style="@style/sty_mainbtn"
+        android:text="sdw"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -119,19 +112,16 @@
 
         <Button
             android:id="@+id/carviewanimator"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/sty_mainbtn"
             android:text="carviewanimator"/>
         <Button
             android:id="@+id/cameraopen"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/sty_mainbtn"
             android:text="cameraopen"/>
 
         <Button
             android:id="@+id/nongshang"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/sty_mainbtn"
             android:text="nongshang"/>
     </LinearLayout>
     <LinearLayout
@@ -141,24 +131,26 @@
 
         <Button
             android:id="@+id/weex"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/sty_mainbtn"
             android:text="weex"/>
         <Button
             android:id="@+id/bottombar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/sty_mainbtn"
             android:text="bottombar"/>
         <Button
             android:id="@+id/camera"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/sty_mainbtn"
             android:text="defcamera"/>
-        <Button
-            android:id="@+id/jetpack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="jetpack"/>
 
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <Button
+        android:id="@+id/jetpack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="jetpack"/>
     </LinearLayout>
 </LinearLayout>
