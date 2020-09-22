@@ -46,7 +46,7 @@ buildscript {
     }
 }
 dependencies {
-    implementation 'com.android.support:appcompat-v7:25.+'
+    implementation 'com.android.support:appcompat-v7:25.0.0'
 
     //compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
