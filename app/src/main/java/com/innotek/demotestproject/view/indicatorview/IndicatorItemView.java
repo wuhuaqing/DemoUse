@@ -7,6 +7,7 @@ import android.graphics.Canvas;
 import android.graphics.DashPathEffect;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.Rect;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Looper;
@@ -17,8 +18,10 @@ import android.text.TextPaint;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.View;
+
 import com.innotek.demotestproject.R;
 import com.innotek.demotestproject.view.piechart.DensityUtil;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -57,7 +60,7 @@ public class IndicatorItemView extends View {
      */
     private List<IndicatorBean> indicatorBeanList = new ArrayList<>();
     private int staticlayoutHeght;
-    private  int  abovetextlenth ;
+    private int abovetextlenth;
 
     public IndicatorItemView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
@@ -189,11 +192,11 @@ public class IndicatorItemView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (indicatorBeanList.size() > 3) {//indicatorWidth -left - right
-            lineLenth = (indicatorWidth) / (indicatorBeanList.size() - 1) - 3* indicatorRadius;//(indicatorWidth) / (indicatorBeanList.size() - 1) - 4 * indicatorRadius
+            lineLenth = (indicatorWidth) / (indicatorBeanList.size() - 1) - 3 * indicatorRadius;//(indicatorWidth) / (indicatorBeanList.size() - 1) - 4 * indicatorRadius
 
-        } else if(indicatorBeanList.size() ==3){
-            lineLenth = (indicatorWidth) / (indicatorBeanList.size() - 1) - 3 * indicatorRadius- DensityUtil.dip2px(context, 14);
-        }else {
+        } else if (indicatorBeanList.size() == 3) {
+            lineLenth = (indicatorWidth) / (indicatorBeanList.size() - 1) - 3 * indicatorRadius - DensityUtil.dip2px(context, 14);
+        } else {
             lineLenth = (indicatorWidth - left - right) / 2;
             lineLenth += (lineLenth) / 2 - DensityUtil.dip2px(context, 14);
         }
@@ -244,7 +247,7 @@ public class IndicatorItemView extends View {
                 IndicatorBean indicatorBean = indicatorBeanList.get(i);
                 //多个圆的横坐标公式
                 centerX = left + raduis + (lenth + raduis + raduis) * i;
-                if(indicatorBean.carIndex ==  i){//小车X坐标
+                if (indicatorBean.carIndex == i) {//小车X坐标
                     carCenterX = centerX;
                 }
 
@@ -359,8 +362,17 @@ public class IndicatorItemView extends View {
         //该方法即为设置基线上那个点究竟是left,center,还是right  设置为center
         textPaint.setTextAlign(Paint.Align.CENTER);
 
+        //两种竖直方向偏移量的取值方式
+        //方式一：
         Paint.FontMetrics fontMetrics = textPaint.getFontMetrics();
-        float baseLineY = centerY - (fontMetrics.bottom - fontMetrics.top) / 2 - fontMetrics.top - 5;
+        //   float baseLineY = centerY - (fontMetrics.bottom - fontMetrics.top) / 2 - fontMetrics.top - 5;
+        float baseLineY = centerY - (fontMetrics.descent + fontMetrics.ascent) / 2;
+        //方式二：
+//        Rect rect = new Rect();
+//        textPaint.getTextBounds(text,0,text.length(),rect);
+//        float baseLineY = centerY - (rect.top +rect.bottom)/2;
+
+
         //获取text设置默认字体后的文字长度
         float measureTextLen = textPaint.measureText(text);
         //文字宽度大于圆的宽度
@@ -385,10 +397,10 @@ public class IndicatorItemView extends View {
      * @param centerY
      * @param indicatorBean
      */
-    private void drawOutSideButtomText(Canvas canvas, int index, int centerX, int centerY,IndicatorBean indicatorBean) {
+    private void drawOutSideButtomText(Canvas canvas, int index, int centerX, int centerY, IndicatorBean indicatorBean) {
 
         CharSequence text = indicatorBean.indicatorButtomText;
-        int textColor= indicatorBean.indicatroButtomTextColor;
+        int textColor = indicatorBean.indicatroButtomTextColor;
         buttotextPaint.setColor(textColor);
         //该方法即为设置基线上那个点究竟是left,center,还是right  设置为center
         buttotextPaint.setTextAlign(Paint.Align.CENTER);
@@ -403,7 +415,7 @@ public class IndicatorItemView extends View {
             centerX = centerX + raduis + right / 2;
         }
         //需要换行显示
-        if(indicatorBean.buttomTextIsNeedNewLine){
+        if (indicatorBean.buttomTextIsNeedNewLine) {
             centerY = (int) (centerY + raduis * 1.5);
             //设置默认字体大小
             buttotextPaint.setTextSize(DensityUtil.dip2px(context, 13));
@@ -415,10 +427,10 @@ public class IndicatorItemView extends View {
             staticlayoutHeght = staticLayout.getHeight();
             canvas.restore();
             requestLayout();
-        }else {//不换行显示
-            buttotextPaint.setTextSize( DensityUtil.dip2px(context, 13));
+        } else {//不换行显示
+            buttotextPaint.setTextSize(DensityUtil.dip2px(context, 13));
             centerY = (int) (centerY + raduis * 2.5);
-            canvas.drawText(text.toString(),centerX,centerY,buttotextPaint);
+            canvas.drawText(text.toString(), centerX, centerY, buttotextPaint);
         }
 
     }
@@ -426,7 +438,7 @@ public class IndicatorItemView extends View {
     /**
      * 上方文字, int textLenth
      */
-    private void drawOutSideAboveText(Canvas canvas, int index, int centerX, int centerY, int textLenth,String text, int textColor) {
+    private void drawOutSideAboveText(Canvas canvas, int index, int centerX, int centerY, int textLenth, String text, int textColor) {
         abovetextPaint.setColor(textColor);
         //设置默认字体大小
         int textSize = DensityUtil.dip2px(context, 12);
