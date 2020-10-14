@@ -45,8 +45,6 @@ public class MatrixCameraView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-
-
         canvas.save();
         canvas.translate(IMAGE_PADDING + IMAGE_WIDTH / 2, IMAGE_PADDING + IMAGE_WIDTH / 2);
         canvas.rotate(-30);
@@ -55,7 +53,6 @@ public class MatrixCameraView extends View {
         canvas.translate(- (IMAGE_PADDING + IMAGE_WIDTH / 2), - (IMAGE_PADDING + IMAGE_WIDTH / 2));
         canvas.drawBitmap(image, IMAGE_PADDING, IMAGE_PADDING, paint);
         canvas.restore();
-
 
         canvas.save();
         canvas.translate(IMAGE_PADDING + IMAGE_WIDTH / 2, IMAGE_PADDING + IMAGE_WIDTH / 2);
