@@ -14,20 +14,17 @@
 
         <Button
             android:id="@+id/btn_textview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/sty_mainbtn"
             android:text="text的绘制" />
 
         <Button
             android:id="@+id/btn_horizonlayout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/sty_mainbtn"
             android:text="横向stepview" />
 
         <Button
             android:id="@+id/btn_stepviewitem"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/sty_mainbtn"
             android:text="stepviewitem" />
 
 
@@ -41,13 +38,17 @@
 
         <Button
             android:id="@+id/btn_timestepitem"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/sty_mainbtn"
             android:text="timestepitem" />
+
         <Button
             android:id="@+id/btn_matrixcamera"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/sty_mainbtn"
             android:text="MatrixCamera" />
+
+        <Button
+            android:id="@+id/btn_viewgroup"
+            style="@style/sty_mainbtn"
+            android:text="FlowLayout" />
     </LinearLayout>
 </LinearLayout>
