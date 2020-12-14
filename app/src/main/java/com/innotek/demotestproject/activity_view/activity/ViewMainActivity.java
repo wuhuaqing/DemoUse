@@ -7,6 +7,7 @@ import android.view.View;
 import com.innotek.demotestproject.R;
 import com.innotek.demotestproject.activity.BaseActivity;
 import com.innotek.demotestproject.activity.MainActivity;
+import com.innotek.demotestproject.view.geasuredetector.ScaleImageView;
 
 public class ViewMainActivity extends BaseActivity {
 
@@ -53,6 +54,13 @@ public class ViewMainActivity extends BaseActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(ViewMainActivity.this, FlowLayoutActivity.class));
+
+            }
+        });
+        findViewById(R.id.btn_scaleImageview).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ViewMainActivity.this, ScaleImageViewActivity.class));
 
             }
         });
