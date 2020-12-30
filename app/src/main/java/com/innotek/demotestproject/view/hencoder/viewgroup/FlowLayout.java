@@ -1,4 +1,4 @@
-package com.innotek.demotestproject.view.viewgroup;
+package com.innotek.demotestproject.view.hencoder.viewgroup;
 
 import android.content.Context;
 import android.graphics.Rect;

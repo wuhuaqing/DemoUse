@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
 
 
-    <com.innotek.demotestproject.view.viewgroup.FlowLayout
+    <com.innotek.demotestproject.view.hencoder.viewgroup.FlowLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -215,7 +215,7 @@
             android:layout_margin="10dp"
             android:text="澳门特别行政区" />
 
-    </com.innotek.demotestproject.view.viewgroup.FlowLayout>
+    </com.innotek.demotestproject.view.hencoder.viewgroup.FlowLayout>
 </ScrollView>
 
     <!--

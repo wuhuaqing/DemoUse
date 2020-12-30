@@ -1,4 +1,4 @@
-package com.innotek.demotestproject.view.matrixcamera;
+package com.innotek.demotestproject.view.hencoder.matrixcamera;
 
 import android.content.Context;
 import android.graphics.Bitmap;

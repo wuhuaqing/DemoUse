@@ -1,4 +1,4 @@
-package com.innotek.demotestproject.view.geasuredetector;
+package com.innotek.demotestproject.view.hencoder.geasuredetector;
 
 import android.animation.ObjectAnimator;
 import android.content.Context;
@@ -89,7 +89,7 @@ public class ScaleImageView extends View implements GestureDetector.OnGestureLis
         super.onDraw(canvas);
 
         //偏移操作
-        canvas.translate(offsetX, offsetY);
+        canvas.translate(offsetX*scaleFraction, offsetY*scaleFraction);
         //缩放操作
         //加入动画渐变控制
         currentScale = scaleSmall + (scaleBig - scaleSmall) * scaleFraction;

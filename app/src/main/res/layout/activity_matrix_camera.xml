@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".activity_view.activity.MatrixCameraActivity">
 
-    <com.innotek.demotestproject.view.matrixcamera.MatrixCameraView
+    <com.innotek.demotestproject.view.hencoder.matrixcamera.MatrixCameraView
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

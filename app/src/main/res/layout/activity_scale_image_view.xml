@@ -7,7 +7,7 @@
     tools:context=".activity_view.activity.ScaleImageViewActivity">
 
 
-    <com.innotek.demotestproject.view.geasuredetector.ScaleImageView
+    <com.innotek.demotestproject.view.hencoder.geasuredetector.ScaleImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
